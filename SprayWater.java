@@ -1,15 +1,17 @@
 import java.util.*;
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
+import com.sun.speech.freetts.*;
+import org.opencv.core.*;
+import org.opencv.videoio.*;
+import org.opencv.objdetect.*;
 
 public class SprayWater {
-   private static final String VOICENAME = "kevin16";
-   private static Voice voice;
-   private static Scanner sc = new Scanner(System.in);
+   public static String VOICENAME = "kevin16";
+   public static Voice voice;
+   public static Scanner sc = new Scanner(System.in);
 
    public static void main(String[] args) {  
       while (true) {
-         if (userIsPresent()) {}
+         if (userIsPresent()) {
             if (!EyeTime()) {
                System.out.println("Are You Sleeping?");
                speaker();
@@ -20,11 +22,19 @@ public class SprayWater {
    }
 
    public static boolean userIsPresent() {
+
       return true;
    }
 
    public static boolean EyeTime() {
-      return sc.nextBoolean();
+      int time = 0;
+      while (time < 10) {
+         if (eyes are open) {
+            return true;
+         }
+         time++;
+      }
+      return false;
    }
 
    public static void timer() {
@@ -35,7 +45,7 @@ public class SprayWater {
          @Override
          public void run() {
             System.out.println("Type response (I'm not): ");
-            if (sc.hasNext()) {
+            if (sc.hasNextLine()) {
                String answer = sc.nextLine();
                if (answer.equalsIgnoreCase("I'm not")) {
                   timer.cancel();
