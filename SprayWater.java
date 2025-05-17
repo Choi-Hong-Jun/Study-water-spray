@@ -22,14 +22,16 @@ public class SprayWater {
    }
 
    public static boolean userIsPresent() {
-
-      return true;
+      if (user is present) { // explanation
+         return true;
+      }
+      return false;
    }
 
    public static boolean EyeTime() {
       int time = 0;
       while (time < 10) {
-         if (eyes are open) {
+         if (eyes are open) {  //explanation
             return true;
          }
          time++;
